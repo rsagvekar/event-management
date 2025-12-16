@@ -15,6 +15,7 @@ import BhauTorsekar from "../assets/bhauTorsekar.jpg";
 import ManojJoshi from "../assets/manojJoshi.jpg";
 import NanaPatekar from "../assets/nanaPatekar.jpg";
 import UdayNirgudkar from "../assets/udayNirgudkar.jpg";
+import UdayNirgudkar1 from "../assets/udayNirgudkar1.jpg";
 import PrabhakarSuryavanshi from "../assets/prabhakarSuryavanshi.jpg";
 import SharadPonkshe from "../assets/sharadPonkshe.jpg";
 
@@ -91,7 +92,7 @@ const Home = () => {
         {
           name: "उदय निर्गुडकर",
           role: "",
-          image: UdayNirgudkar,
+          image: UdayNirgudkar1,
         },
       ],
     },
