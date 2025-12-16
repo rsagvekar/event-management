@@ -9,63 +9,94 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <nav className="bg-gradient-to-r from-orange-600 via-amber-600 to-orange-700 shadow-2xl sticky top-0 z-50 border-b-4 border-yellow-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">E</span>
+        <div className="flex justify-between items-center h-20">
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="w-12 h-12 bg-gradient-to-br from-yellow-300 to-orange-400 rounded-xl flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+              <span className="text-brown-900 font-black text-2xl" style={{ fontFamily: "'Poppins', sans-serif" }}>म</span>
             </div>
-            <span className="text-xl font-bold text-gray-800">EventHub</span>
+            <div className="flex flex-col">
+              <span className="text-2xl font-black text-white" style={{ 
+                fontFamily: "'Mukta', sans-serif",
+                textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
+                letterSpacing: '0.5px',
+              }}>
+                मुंबई डायलॉग्ज
+              </span>
+              <span className="text-xs text-yellow-200 font-semibold -mt-1" style={{ fontFamily: "'Mukta', sans-serif" }}>
+                स्वप्नवत मुंबईचा
+              </span>
+            </div>
           </Link>
 
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-2 sm:space-x-6">
             <Link
               to="/"
-              className={`transition duration-300 ${
-                isActive('/') ? 'text-primary font-semibold' : 'text-gray-600 hover:text-primary'
+              className={`px-4 py-2 rounded-lg font-bold text-base sm:text-lg transition-all duration-300 ${
+                isActive('/') 
+                  ? 'bg-white text-orange-600 shadow-lg transform scale-105' 
+                  : 'text-white hover:bg-white/20 hover:backdrop-blur-sm'
               }`}
+              style={{ fontFamily: "'Mukta', sans-serif" }}
             >
-              Home
+              मुख्यपृष्ठ
             </Link>
             <Link
               to="/register"
-              className={`transition duration-300 ${
-                isActive('/register') ? 'text-primary font-semibold' : 'text-gray-600 hover:text-primary'
+              className={`px-4 py-2 rounded-lg font-bold text-base sm:text-lg transition-all duration-300 ${
+                isActive('/register') 
+                  ? 'bg-white text-orange-600 shadow-lg transform scale-105' 
+                  : 'text-white hover:bg-white/20 hover:backdrop-blur-sm'
               }`}
+              style={{ fontFamily: "'Mukta', sans-serif" }}
             >
-              Register
+              नोंदणी
             </Link>
             {isAdmin ? (
               <>
                 <Link
                   to="/admin"
-                  className={`transition duration-300 ${
-                    isActive('/admin') ? 'text-primary font-semibold' : 'text-gray-600 hover:text-primary'
+                  className={`px-4 py-2 rounded-lg font-bold text-base sm:text-lg transition-all duration-300 ${
+                    isActive('/admin') 
+                      ? 'bg-white text-orange-600 shadow-lg transform scale-105' 
+                      : 'text-white hover:bg-white/20 hover:backdrop-blur-sm'
                   }`}
+                  style={{ fontFamily: "'Mukta', sans-serif" }}
                 >
-                  Admin
+                  प्रशासक
                 </Link>
                 <button
                   onClick={() => setIsAdmin(false)}
-                  className="text-sm bg-red-100 text-red-600 px-3 py-1 rounded hover:bg-red-200 transition"
+                  className="text-sm sm:text-base bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  style={{ fontFamily: "'Mukta', sans-serif" }}
                 >
-                  Logout
+                  बाहेर पडा
                 </button>
               </>
             ) : (
               <Link
                 to="/admin-login"
-                className={`transition duration-300 ${
-                  isActive('/admin-login') ? 'text-primary font-semibold' : 'text-gray-600 hover:text-primary'
+                className={`px-4 py-2 rounded-lg font-bold text-base sm:text-lg transition-all duration-300 border-2 ${
+                  isActive('/admin-login') 
+                    ? 'bg-white text-orange-600 border-white shadow-lg transform scale-105' 
+                    : 'text-white border-yellow-300 hover:bg-yellow-300 hover:text-orange-700 hover:border-yellow-400'
                 }`}
+                style={{ fontFamily: "'Mukta', sans-serif" }}
               >
-                Admin Login
+                प्रशासक लॉगिन
               </Link>
             )}
           </div>
         </div>
       </div>
+      
+      {/* Decorative Bottom Border Effect */}
+      <div className="h-1 bg-gradient-to-r from-transparent via-yellow-300 to-transparent"></div>
+      
+      <style jsx>{`
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=Mukta:wght@400;600;700;800&display=swap');
+      `}</style>
     </nav>
   );
 };
